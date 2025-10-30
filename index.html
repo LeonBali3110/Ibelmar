@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manteniment IT & Xarxes</title>
+  <meta name="description" content="Mantenimiento de equipos informáticos y redes para empresas y particulares." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "i18n": "./js/i18n.js",
+      "app": "./js/app.js",
+      "admin": "./js/admin.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir a inicio">
+        <span class="brand-mark">IT+</span>
+        <span class="brand-name">Manteniment & Xarxes</span>
+      </a>
+      <nav class="nav">
+        <a href="#inicio" data-nav="inicio" class="nav-link">Inicio</a>
+        <a href="#informacion" data-nav="informacion" class="nav-link">Información</a>
+        <a href="#servicios" data-nav="servicios" class="nav-link">Servicios</a>
+        <a href="#contacto" data-nav="contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button id="lang-toggle" class="btn ghost" aria-label="Cambiar idioma">ES</button>
+        <button id="admin-open" class="btn ghost" aria-label="Abrir panel de administración" title="Admin">
+          <!-- lock icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 10V7a6 6 0 1112 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="section hero">
+      <div class="container">
+        <h1 id="hero-title">Mantenimiento de equipos informáticos y redes</h1>
+        <p id="hero-subtitle">Para empresas y particulares. Servicio profesional, rápido y confiable.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn primary" id="hero-cta">Solicitar presupuesto</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="informacion" class="section">
+      <div class="container two-col">
+        <div>
+          <h2 id="info-title">Quiénes somos</h2>
+          <p id="info-text">
+            Somos un equipo especializado en mantenimiento de equipos informáticos, redes y seguridad.
+            Trabajamos con empresas y particulares ofreciendo soluciones a medida.
+          </p>
+        </div>
+        <div class="card stats">
+          <div class="stat">
+            <div class="stat-value" id="stat-years">10+</div>
+            <div class="stat-label" id="stat-years-label">Años de experiencia</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="stat-sla">24h</div>
+            <div class="stat-label" id="stat-sla-label">Tiempo de respuesta</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="stat-clients">120+</div>
+            <div class="stat-label" id="stat-clients-label">Clientes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section alt">
+      <div class="container">
+        <h2 id="services-title">Servicios</h2>
+        <div id="services-list" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container two-col">
+        <div>
+          <h2 id="contact-title">Contacto</h2>
+          <p id="contact-text">Atendemos de lunes a viernes de 9:00 a 18:00.</p>
+          <ul class="contact-list">
+            <li><strong id="contact-phone-label">Teléfono:</strong> <span id="contact-phone">+34 600 000 000</span></li>
+            <li><strong id="contact-email-label">Email:</strong> <span id="contact-email">info@empresa-it.es</span></li>
+            <li><strong id="contact-address-label">Dirección:</strong> <span id="contact-address">Carrer Exemple, 123, Barcelona</span></li>
+          </ul>
+          <div class="socials">
+            <a id="link-instagram" class="social" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a id="link-whatsapp" class="social" target="_blank" rel="noopener" aria-label="Whatsapp">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 12a8 8 0 10-14.7 4.3L4 21l4.8-1.3A8 8 0 0020 12z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M8.5 9.5c.4 2 2.6 3.9 4.1 4.3.7.2 1.4-.2 1.8-.7l.7.4c.3.2.6.6.5 1-1 1.8-3.3 1.6-5.8-.6-2.5-2.2-3.2-4.7-2.2-6.5.3-.5.8-.6 1.2-.4l.7.4c-.4.5-.7 1.2-.2 1.7z" fill="currentColor"/>
+              </svg>
+              <span>Whatsapp</span>
+            </a>
+            <a id="link-maps" class="social" target="_blank" rel="noopener" aria-label="Google Maps">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+              </svg>
+              <span>Maps</span>
+            </a>
+          </div>
+        </div>
+        <div class="card contact-card">
+          <div class="card map-card">
+            <iframe id="maps-embed" title="Ubicación en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>&copy; <span id="footer-year"></span> <span class="brand-name">Manteniment & Xarxes</span></span>
+      </div>
+      <div class="footer-right">
+        <a href="#informacion" class="footer-link">Información</a>
+        <a href="#servicios" class="footer-link">Servicios</a>
+        <a href="#contacto" class="footer-link">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Panel Modal -->
+  <div id="admin-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="admin-close-backdrop"></div>
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="admin-title">Panel de administración</h3>
+        <button class="btn ghost" id="admin-close" aria-label="Cerrar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div id="admin-body">
+        <!-- Login -->
+        <form id="admin-login" class="admin-login">
+          <div class="form-field">
+            <label for="admin-user" id="admin-user-label">Usuario</label>
+            <input id="admin-user" type="text" autocomplete="username" required />
+          </div>
+          <div class="form-field">
+            <label for="admin-pass" id="admin-pass-label">Contraseña</label>
+            <input id="admin-pass" type="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="btn primary" id="admin-login-btn">Acceder</button>
+          <p class="form-feedback" id="admin-login-feedback"></p>
+        </form>
+
+        <!-- Editor -->
+        <form id="admin-editor" class="admin-editor hidden">
+          <div class="form-grid">
+            <fieldset>
+              <legend id="admin-section-hero">Inicio</legend>
+              <div class="form-field">
+                <label for="heroTitleInput" id="admin-hero-title-label">Título</label>
+                <input id="heroTitleInput" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="heroSubtitleInput" id="admin-hero-subtitle-label">Subtítulo</label>
+                <input id="heroSubtitleInput" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="heroCtaInput" id="admin-hero-cta-label">Texto CTA</label>
+                <input id="heroCtaInput" type="text" />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend id="admin-section-info">Información</legend>
+              <div class="form-field">
+                <label for="infoTitleInput" id="admin-info-title-label">Título</label>
+                <input id="infoTitleInput" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="infoTextInput" id="admin-info-text-label">Descripción</label>
+                <textarea id="infoTextInput" rows="4"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend id="admin-section-services">Servicios</legend>
+              <div id="servicesEditor"></div>
+              <div class="form-actions">
+                <button type="button" class="btn" id="addServiceBtn">Añadir servicio</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend id="admin-section-contact">Contacto</legend>
+              <div class="form-field"><label for="contactPhoneInput" id="admin-contact-phone-label">Teléfono</label><input id="contactPhoneInput" type="text" /></div>
+              <div class="form-field"><label for="contactEmailInput" id="admin-contact-email-label">Email</label><input id="contactEmailInput" type="email" /></div>
+              <div class="form-field"><label for="contactAddressInput" id="admin-contact-address-label">Dirección</label><input id="contactAddressInput" type="text" /></div>
+              <div class="form-field"><label for="instagramInput">Instagram URL</label><input id="instagramInput" type="url" placeholder="https://instagram.com/tuempresa" /></div>
+              <div class="form-field"><label for="whatsappInput">Whatsapp URL</label><input id="whatsappInput" type="url" placeholder="https://wa.me/600000000" /></div>
+              <div class="form-field"><label for="mapsInput">Google Maps URL</label><input id="mapsInput" type="url" placeholder="https://maps.google.com/?q=..." /></div>
+            </fieldset>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn" id="resetContentBtn">Restablecer</button>
+            <button type="submit" class="btn primary" id="saveContentBtn">Guardar cambios</button>
+          </div>
+          <p class="form-feedback" id="admin-save-feedback"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import "./js/app.js";
+    import "./js/admin.js";
+  </script>
+</body>
+</html>
