@@ -17,8 +17,8 @@ const defaultContent = {
   info: {
     title: { es: "Quiénes somos", ca: "Qui som" },
     text: {
-      es: "Somos un equipo especializado en mantenimiento de equipos informáticos, redes y seguridad. Trabajamos con empresas y particulares ofreciendo soluciones a medida.",
-      ca: "Som un equip especialitzat en manteniment d'equips informàtics, xarxes i seguretat. Treballem amb empreses i particulars oferint solucions a mida.",
+      es: "Somos una empresa dedicacda al mantenimiento de equipos informáticos y redes. Damos servicio a Empresas y particulares.  Disponemos también de tienda-taller. Estamos asociados a BEEP Informàtica. Ofrecemos un servicio profesional y muy cercano al cliente, soluciones personalizadas.",
+      ca: "Som una empresa dedicada al manteniment d’equips informàtics i xarxes. Fem serveis a empreses i particulars. Disposem de botiga – Taller. Som associats de la cadena BEEP Informàtica.",
     },
     stats: {
       years: "10+",
@@ -30,22 +30,22 @@ const defaultContent = {
     {
       title: { es: "Mantenimiento preventivo", ca: "Manteniment preventiu" },
       desc: {
-        es: "Revisiones periódicas de hardware y software para evitar incidencias.",
-        ca: "Revisions periòdiques de hardware i software per evitar incidències.",
+        es: "Utilizamos herramientas de diagnostico para anticiparnos a posibles fallos, los prevenimos, dado el caso, buscamos la causa,   lo solucionamos y conseguimos que vuelva a estar operativo.",
+        ca: "Utilitzem eines de diagnòstic per anticipar-nos a possibles errors i prevenir-los. Si cal, busquem la causa, ho solucionem i aconseguim que torni a estar operatiu.",
       },
     },
     {
       title: { es: "Redes y cableado", ca: "Xarxes i cablejat" },
       desc: {
-        es: "Diseño, instalación y optimización de redes para oficinas y hogares.",
-        ca: "Disseny, instal·lació i optimització de xarxes per a oficines i llars.",
+        es: "Verificamos el buen estado de una red informática, Identificamos  y resolvemos cualquier fallo o riesgo que se encuentre para así garantizar el funcionamiento óptimo de su red informática.",
+        ca: "Verifiquem el bon estat d'una xarxa informàtica, identifiquem i resolem qualsevol error o risc que es trobe per garantir el funcionament òptim de la seva xarxa informàtica.",
       },
     },
     {
       title: { es: "Soporte remoto y onsite", ca: "Suport remot i presencial" },
       desc: {
-        es: "Atención rápida por remoto y visitas programadas cuando sea necesario.",
-        ca: "Atenció ràpida per remot i visites programades quan calgui.",
+        es: "Atención rápida por remoto y visitas programadas cuando sea necesario. Telefónica o por email.",
+        ca: "Atenció ràpida per remot i visites programades quan calgui. Telefònica o per email.",
       },
     },
   ],

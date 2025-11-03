@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Manteniment IT & Xarxes</title>
   <meta name="description" content="Mantenimiento de equipos informáticos y redes para empresas y particulares." />
+  <link rel="icon" type="image/png" href="./Imagenes/Icono.jpeg">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
@@ -22,12 +23,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Ir a inicio">
-        <span class="brand-mark">IT+</span>
-        <span class="brand-name">Manteniment & Xarxes</span>
+        <img src="./Imagenes/Logo.jpeg" alt="IB Logo" class="brand-logo">
       </a>
       <nav class="nav">
         <a href="#inicio" data-nav="inicio" class="nav-link">Inicio</a>
-        <a href="#informacion" data-nav="informacion" class="nav-link">Información</a>
+        <a href="#nosotros" data-nav="Nosotros" class="nav-link">Quiénes somos</a>
         <a href="#servicios" data-nav="servicios" class="nav-link">Servicios</a>
         <a href="#contacto" data-nav="contacto" class="nav-link">Contacto</a>
       </nav>
@@ -49,41 +49,43 @@
   </header>
 
   <main>
-    <section id="inicio" class="section hero">
-      <div class="container">
-        <h1 id="hero-title">Mantenimiento de equipos informáticos y redes</h1>
-        <p id="hero-subtitle">Para empresas y particulares. Servicio profesional, rápido y confiable.</p>
-        <div class="hero-cta">
-          <a href="#contacto" class="btn primary" id="hero-cta">Solicitar presupuesto</a>
+    <div id="parte1">
+      <section id="inicio" class="section hero">
+        <div class="container">
+          <h1 id="hero-title">Mantenimiento de equipos informáticos y redes</h1>
+          <p id="hero-subtitle" style="color: #0b1f3a;">Para empresas y particulares. Servicio profesional, rápido y confiable.</p>
+          <div class="hero-cta">
+            <a href="#contacto" class="btn primary" id="hero-cta">Solicitar presupuesto</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="informacion" class="section">
-      <div class="container two-col">
-        <div>
-          <h2 id="info-title">Quiénes somos</h2>
-          <p id="info-text">
-            Somos un equipo especializado en mantenimiento de equipos informáticos, redes y seguridad.
-            Trabajamos con empresas y particulares ofreciendo soluciones a medida.
-          </p>
+      <section id="nosotros" class="section">
+        <div class="container two-col">
+          <div>
+            <h2 id="info-title">Quiénes somos</h2>
+            <p id="info-text">
+              Somos un equipo especializado en mantenimiento de equipos informáticos, redes y seguridad.
+              Trabajamos con empresas y particulares ofreciendo soluciones a medida.
+            </p>
+          </div>
+          <div class="card stats">
+            <div class="stat">
+              <div class="stat-value" id="stat-years">10+</div>
+              <div class="stat-label" id="stat-years-label">Años de experiencia</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" id="stat-sla">24h</div>
+              <div class="stat-label" id="stat-sla-label">Tiempo de respuesta</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" id="stat-clients">120+</div>
+              <div class="stat-label" id="stat-clients-label">Clientes</div>
+            </div>
+          </div>
         </div>
-        <div class="card stats">
-          <div class="stat">
-            <div class="stat-value" id="stat-years">10+</div>
-            <div class="stat-label" id="stat-years-label">Años de experiencia</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value" id="stat-sla">24h</div>
-            <div class="stat-label" id="stat-sla-label">Tiempo de respuesta</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value" id="stat-clients">120+</div>
-            <div class="stat-label" id="stat-clients-label">Clientes</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+     </div> 
 
     <section id="servicios" class="section alt">
       <div class="container">
@@ -139,10 +141,10 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <span>&copy; <span id="footer-year"></span> <span class="brand-name">Manteniment & Xarxes</span></span>
+        <span>&copy; <span id="footer-year"></span> <span class="brand-name">IBelmar</span></span>
       </div>
       <div class="footer-right">
-        <a href="#informacion" class="footer-link">Información</a>
+        <a href="#nosotros" class="footer-link">Nosotros</a>
         <a href="#servicios" class="footer-link">Servicios</a>
         <a href="#contacto" class="footer-link">Contacto</a>
       </div>

@@ -59,7 +59,7 @@ const dict = {
     hero_cta: "Sol·licitar pressupost",
     info_title: "Qui som",
     info_text:
-      "Som un equip especialitzat en manteniment d'equips informàtics, xarxes i seguretat. Treballem amb empreses i particulars oferint solucions a mida.",
+      "Som una empresa dedicada al manteniment d’equips informàtics i xarxes. Fem serveis a empreses i particulars. Disposem de botiga – Taller. Som associats de la cadena BEEP Informàtica.",
     stat_years: "Anys d'experiència",
     stat_sla: "Temps de resposta",
     stat_clients: "Clients",
