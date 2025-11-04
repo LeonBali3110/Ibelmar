@@ -5,8 +5,8 @@ const CONTENT_KEY = "siteContent";
 const defaultContent = {
   hero: {
     title: {
-      es: "Mantenimiento de equipos informáticos y redes",
-      ca: "Manteniment d'equips informàtics i xarxes",
+      es: "Mantenimiento",
+      ca: "Manteniment",
     },
     subtitle: {
       es: "Para empresas y particulares. Servicio profesional, rápido y confiable.",
