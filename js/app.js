@@ -28,7 +28,7 @@ const defaultContent = {
   },
   services: [
     {
-      title: { es: "Mantenimiento preventivo", ca: "Manteniment preventiu" },
+      title: { es: "Mantenimiento", ca: "Manteniment" },
       desc: {
         es: "Utilizamos herramientas de diagnostico para anticiparnos a posibles fallos, los prevenimos, dado el caso, buscamos la causa,   lo solucionamos y conseguimos que vuelva a estar operativo.",
         ca: "Utilitzem eines de diagnòstic per anticipar-nos a possibles errors i prevenir-los. Si cal, busquem la causa, ho solucionem i aconseguim que torni a estar operatiu.",
