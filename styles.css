@@ -55,7 +55,9 @@ body {
 .brand-logo {
   height: 40px;
   width: auto;
+  max-width: 100%;
   display: block;
+  object-fit: contain;
   gap: 10px;
   text-decoration: none;
   color: var(--text);
@@ -160,7 +162,7 @@ body {
       rgb(255, 255, 255),
       rgba(255, 255, 255, 0)
     ),
-    url("Imagenes/mantenimiento.jpeg");
+    url("Imagenes/mantenimiento1.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -391,6 +393,9 @@ legend {
   }
 }
 @media (max-width: 700px) {
+  .brand-logo {
+    height: 32px;
+  }
   .nav {
     display: none;
     position: absolute;
@@ -411,7 +416,14 @@ legend {
   .nav-toggle {
     display: inline-block;
   }
+  /* mostrar solo el selector de idioma en pantallas pequeñas */
   .header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  /* ocultar todos los botones dentro de header-actions excepto el del idioma */
+  .header-actions > *:not(#lang-toggle) {
     display: none;
   }
   .grid {

@@ -152,6 +152,17 @@ function renderContact() {
 function renderFooter() {
   const yearEl = document.getElementById("footer-year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // traducir los enlaces del pie de página
+  const footerMap = {
+    informacion: "nav_info",
+    servicios: "nav_servicios",
+    contacto: "nav_contacto",
+  };
+  document.querySelectorAll("[data-footer]").forEach(el => {
+    const key = el.getAttribute("data-footer");
+    const tkey = footerMap[key];
+    if (tkey) el.textContent = t(tkey);
+  });
 }
 
 function renderFormTexts() {
