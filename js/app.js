@@ -50,14 +50,18 @@ const defaultContent = {
     },
   ],
   contact: {
-    phone: "+34 600 000 000",
-    email: "info@empresa-it.es",
-    address: "Carrer Exemple, 123, Barcelona",
+    phone: "+34 977 176 776",
+    email: "info@ibelmar.com",
+    address: "Av. Penedés 3 Local 1, 43720 L'Arboç del Penedés, Tarragona",
+  },
+  background: {
+    // default background matches the CSS fallback
+    image: "Imagenes/mantenimiento1.jpeg",
   },
   socials: {
-    instagram: "https://instagram.com/",
-    whatsapp: "https://wa.me/600000000",
-    maps: "https://maps.google.com/?q=Carrer%20Exemple%20123%20Barcelona",
+    instagram: "https://ig.me/m/informaticabelmar",
+    whatsapp: "https://wa.me/34659249445",
+    maps: "https://www.google.com/maps/place/Inform%C3%A1tica+Belmar/@41.2651672,1.5979316,15z/data=!4m2!3m1!1s0x0:0xdd9d7b4044dea339?sa=X&ved=2ahUKEwiH1ISPwvzmAhUCyYUKHXy6Ah8Q_BIwCnoECAwQCg",
   },
 };
 
@@ -165,6 +169,33 @@ function renderFooter() {
   });
 }
 
+function applyBackground() {
+  const el = document.getElementById("parte1");
+  if (!el) return;
+  const bg = content.background && content.background.image ? content.background.image : "";
+  if (bg) {
+    // preload the image first; if it fails, keep the CSS fallback
+    const img = new Image();
+    img.onload = () => {
+      // keep the same linear-gradient overlay used in the stylesheet
+      const gradient = "linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0))";
+      el.style.backgroundImage = `${gradient}, url('${bg}')`;
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+      el.style.backgroundRepeat = "no-repeat";
+    };
+    img.onerror = () => {
+      // failed loading admin image -> remove inline style so stylesheet fallback is used
+      el.style.backgroundImage = "";
+      console.warn("Background image failed to load:", bg);
+    };
+    img.src = bg;
+  } else {
+    // no admin background configured -> use stylesheet default
+    el.style.backgroundImage = "";
+  }
+}
+
 function renderFormTexts() {
   setText("form-name-label", t("form_name"));
   setText("form-email-label", t("form_email"));
@@ -204,6 +235,7 @@ export function render() {
   renderServices();
   renderContact();
   renderFooter();
+  applyBackground();
   renderFormTexts();
   renderAdminTexts();
   const langBtn = document.getElementById("lang-toggle");

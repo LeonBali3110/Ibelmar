@@ -396,6 +396,10 @@ legend {
   .brand-logo {
     height: 32px;
   }
+  /* Mobile: don't use fixed backgrounds (performance and visual issues on mobile) */
+  #parte1 {
+    background-attachment: scroll;
+  }
   .nav {
     display: none;
     position: absolute;

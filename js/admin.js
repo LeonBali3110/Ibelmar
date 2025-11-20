@@ -22,9 +22,15 @@ const contactPhoneInput = document.getElementById("contactPhoneInput");
 const contactEmailInput = document.getElementById("contactEmailInput");
 const contactAddressInput = document.getElementById("contactAddressInput");
 
+const statYearsInput = document.getElementById("admin-stat-years");
+const statSlaInput = document.getElementById("admin-stat-sla");
+const statClientsInput = document.getElementById("admin-stat-clients");
+
 const instagramInput = document.getElementById("instagramInput");
 const whatsappInput = document.getElementById("whatsappInput");
 const mapsInput = document.getElementById("mapsInput");
+const backgroundFileInput = document.getElementById("backgroundFileInput");
+const backgroundPreview = document.getElementById("backgroundPreview");
 
 const servicesEditor = document.getElementById("servicesEditor");
 const addServiceBtn = document.getElementById("addServiceBtn");
@@ -59,6 +65,22 @@ function fillEditorFields() {
   instagramInput.value = data.socials.instagram || "";
   whatsappInput.value = data.socials.whatsapp || "";
   mapsInput.value = data.socials.maps || "";
+  // background preview (keep existing image shown but don't change it)
+  const bg = (data.background && data.background.image) || "";
+  if (backgroundPreview) {
+    if (bg) {
+      backgroundPreview.src = bg;
+      backgroundPreview.style.display = "block";
+    } else {
+      backgroundPreview.src = "";
+      backgroundPreview.style.display = "none";
+    }
+  }
+
+  // stats
+  statYearsInput && (statYearsInput.value = (data.info && data.info.stats && data.info.stats.years) || "");
+  statSlaInput && (statSlaInput.value = (data.info && data.info.stats && data.info.stats.sla) || "");
+  statClientsInput && (statClientsInput.value = (data.info && data.info.stats && data.info.stats.clients) || "");
 
   renderServicesEditor(data.services);
 }
@@ -161,6 +183,7 @@ function bindAdmin() {
     renderServicesEditor(next);
   });
 
+
   resetContentBtn?.addEventListener("click", () => {
     localStorage.removeItem("siteContent");
     const data = getContent(); // old reference; reload explicitly
@@ -185,6 +208,12 @@ function bindAdmin() {
     data.info.title[getLang()] = infoTitleInput.value;
     data.info.text[getLang()] = infoTextInput.value;
 
+    // stats
+    if (!data.info.stats) data.info.stats = { years: "", sla: "", clients: "" };
+    data.info.stats.years = statYearsInput ? statYearsInput.value : data.info.stats.years;
+    data.info.stats.sla = statSlaInput ? statSlaInput.value : data.info.stats.sla;
+    data.info.stats.clients = statClientsInput ? statClientsInput.value : data.info.stats.clients;
+
     data.contact.phone = contactPhoneInput.value;
     data.contact.email = contactEmailInput.value;
     data.contact.address = contactAddressInput.value;
@@ -193,6 +222,12 @@ function bindAdmin() {
     data.socials.whatsapp = whatsappInput.value;
     data.socials.maps = mapsInput.value;
 
+    // background: only overwrite if a new file was uploaded (data URL)
+    if (!data.background) data.background = {};
+    if (typeof pickedBackgroundDataUrl !== 'undefined' && pickedBackgroundDataUrl) {
+      data.background.image = pickedBackgroundDataUrl;
+    }
+
     saveContent(data);
     render();
     saveFeedback.textContent = t("admin_saved");
@@ -200,6 +235,22 @@ function bindAdmin() {
     // closeModal(); // cerrar modal tras guardar cambios
   });
 }
+
+// Background handling: file upload only
+let pickedBackgroundDataUrl = null;
+backgroundFileInput?.addEventListener("change", e => {
+  const f = e.target.files && e.target.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    pickedBackgroundDataUrl = reader.result;
+    if (backgroundPreview) {
+      backgroundPreview.src = pickedBackgroundDataUrl;
+      backgroundPreview.style.display = "block";
+    }
+  };
+  reader.readAsDataURL(f);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   bindAdmin();
