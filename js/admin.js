@@ -21,6 +21,7 @@ const infoTextInput = document.getElementById("infoTextInput");
 const contactPhoneInput = document.getElementById("contactPhoneInput");
 const contactEmailInput = document.getElementById("contactEmailInput");
 const contactAddressInput = document.getElementById("contactAddressInput");
+const contactTextInput = document.getElementById("contactTextInput");
 
 const statYearsInput = document.getElementById("admin-stat-years");
 const statSlaInput = document.getElementById("admin-stat-sla");
@@ -61,6 +62,11 @@ function fillEditorFields() {
   contactPhoneInput.value = data.contact.phone || "";
   contactEmailInput.value = data.contact.email || "";
   contactAddressInput.value = data.contact.address || "";
+  // load per-language contact hours/text
+  if (contactTextInput) {
+    const hours = data.contact && data.contact.hours;
+    contactTextInput.value = (hours && (typeof hours === 'string' ? hours : hours[getLang()])) || "";
+  }
 
   instagramInput.value = data.socials.instagram || "";
   whatsappInput.value = data.socials.whatsapp || "";
@@ -217,6 +223,13 @@ function bindAdmin() {
     data.contact.phone = contactPhoneInput.value;
     data.contact.email = contactEmailInput.value;
     data.contact.address = contactAddressInput.value;
+    // save per-language contact hours/text
+    if (contactTextInput) {
+      if (!data.contact) data.contact = {};
+      if (!data.contact.hours || typeof data.contact.hours === 'string') data.contact.hours = { es: "", ca: "" };
+      data.contact.hours[getLang()] = contactTextInput.value;
+    }
+    
 
     data.socials.instagram = instagramInput.value;
     data.socials.whatsapp = whatsappInput.value;

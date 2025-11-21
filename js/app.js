@@ -53,6 +53,10 @@ const defaultContent = {
     phone: "+34 977 176 776",
     email: "info@ibelmar.com",
     address: "Av. Penedés 3 Local 1, 43720 L'Arboç del Penedés, Tarragona",
+    hours: {
+      es: "Atendemos de lunes a viernes de 9:00 a 18:00.",
+      ca: "Atendrem de dilluns a divendres de 9:00 a 18:00.",
+    },
   },
   background: {
     // default background matches the CSS fallback
@@ -70,7 +74,13 @@ function loadContent() {
   if (!raw) return defaultContent;
   try {
     const data = JSON.parse(raw);
-    return { ...defaultContent, ...data };
+    const merged = { ...defaultContent, ...data };
+    // Normalize legacy contact.hours stored as a string -> convert to per-language object
+    if (merged.contact && merged.contact.hours && typeof merged.contact.hours === "string") {
+      const v = merged.contact.hours;
+      merged.contact.hours = { es: v, ca: v };
+    }
+    return merged;
   } catch {
     return defaultContent;
   }
@@ -131,7 +141,8 @@ function renderServices() {
 
 function renderContact() {
   setText("contact-title", t("contact_title"));
-  setText("contact-text", t("contact_text"));
+  const contactHours = content.contact && content.contact.hours;
+  setText("contact-text", (contactHours && (typeof contactHours === 'string' ? contactHours : contactHours[getLang()])) || t("contact_text"));
   setText("contact-phone-label", t("contact_phone") + ":");
   setText("contact-email-label", t("contact_email") + ":");
   setText("contact-address-label", t("contact_address") + ":");
